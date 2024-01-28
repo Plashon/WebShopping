@@ -203,7 +203,7 @@ const cart  = ()=>{
     cart1.addLineItem(lineItem1);
     cart1.addLineItem(lineItem2);
 
-    let cart2 = new ShoppingCart("28/01/2567");
+    let cart2 = new ShoppingCart("26/11/2567");
     cart2.addLineItem(lineItem3);
     cart2.addLineItem(lineItem4);
     

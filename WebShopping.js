@@ -117,6 +117,13 @@ class ShoppingCart{
     addLineItem(lineItem){
         this.lineItems.push(lineItem);
     }
+    setTotal() {
+        let total = 0;
+        for (let i = 0; i < this.lineItems.length; i++) {
+          total += this.lineItems[i].quantity * this.lineItems[i].price;
+        }
+        this.total = total;
+      }
 
 }
 
@@ -174,10 +181,6 @@ const main = ()=>{
 
     console.log(order1);
 
-
-
-    //add to User
-
 }
 //main();
 
@@ -188,6 +191,7 @@ const cart  = ()=>{
     let backpack = new Product("04","Backpack","Plashon");
     let blackPen = new Product("05","black-pen","Lencer");
 
+    //create LineItem 
     let lineItem1 = new LineItem(5,15);
     lineItem1.setProduct(pen);
     let lineItem2 = new LineItem(1,300);
@@ -197,8 +201,6 @@ const cart  = ()=>{
     let lineItem4 = new LineItem(2,15);
     lineItem2.setProduct(pencil);
 
-
-
     let cart1 = new ShoppingCart("28/01/2567");
     cart1.addLineItem(lineItem1);
     cart1.addLineItem(lineItem2);
@@ -207,6 +209,9 @@ const cart  = ()=>{
     cart2.addLineItem(lineItem3);
     cart2.addLineItem(lineItem4);
     
+    cart1.setTotal();
+    cart2.setTotal();
+
     console.log(cart1);
     console.log(cart2);
 
